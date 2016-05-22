@@ -10,7 +10,12 @@
     {% analytical_head_bottom %}
   </head>
   {% get_random_background as background %}
-  <body id="{% block body_id %}main_content{% endblock %}" ng-app='hz' class="" style="background-image: url('{{ background.url }}');">
+  <body id="{% block body_id %}main_content{% endblock %}" ng-app='horizon.app' ng-strict-di class=""  style="background-image: url('{{ background.url }}');">
+    <noscript>
+      <div class="javascript_disabled_alert">
+        {% trans "This application requires JavaScript to be enabled in your web browser." %}
+      </div>
+    </noscript>
     {% analytical_body_top %}
     {% include "horizon/_messages.html" %}
     <div class="navbar navbar-inverse navbar-fixed-top">
